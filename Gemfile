@@ -18,6 +18,10 @@ source 'https://rubygems.org'
    gem 'rspec-rails', '~> 3.0'
  end
  
+ group :development do
+   gem 'pry-rails'
+ end
+ 
  gem 'bootstrap-sass'
  
  # Use SCSS for stylesheets
