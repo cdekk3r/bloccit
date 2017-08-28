@@ -67,5 +67,4 @@ RSpec.describe PostsController, type: :controller do
         expect(assigns(:post)).to eq(my_post)
       end
     end
-
 end
