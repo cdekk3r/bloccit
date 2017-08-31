@@ -38,6 +38,23 @@ RSpec.describe SponsoredPostsController, type: :controller do
     end
   end
   
+  describe "GET show" do
+    it "returns http success" do
+      get :show, topic_id: my_topic.id, id: my_sponsored_post.id
+      expect(response).to have_http_status(:success)
+    end
+    
+    it "renders the #show view" do
+      get:show, topic_id: my_topic.id, id: my_sponsored_post.id
+      expect(response).to render_template :show
+    end
+    
+    it "assigns sponsored_post to @sponsored_post" do
+      get:show, topic_id: my_topic.id, id: my_sponsored_post.id
+      expect(assigns(:sponsored_post)).to eq(my_sponsored_post)
+    end
+  end
+  
   describe "GET edit" do
     it "returns http success" do
       get :edit, topic_id: my_topic.id, id: my_sponsored_post.id
@@ -80,6 +97,20 @@ RSpec.describe SponsoredPostsController, type: :controller do
       
       put :update, topic_id: my_topic.id, id: my_sponsored_post.id, sponsored_post: {title: new_title, body: new_body, price: 100}
       expect(response).to redirect_to [my_topic, my_sponsored_post]
+    end
+  end
+  
+  describe "DELETE destroy" do
+    it "deletes the post" do
+      delete :destroy, topic_id: my_topic.id, id: my_sponsored_post.id
+      
+      count = SponsoredPost.where({id: my_sponsored_post.id}).size
+      expect(count).to eq 0
+    end
+    
+    it "redirects to topic show" do
+      delete :destroy, topic_id: my_topic.id, id: my_sponsored_post.id
+      expect(response).to redirect_to my_topic
     end
   end
 end

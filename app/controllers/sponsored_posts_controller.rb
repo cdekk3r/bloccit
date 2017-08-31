@@ -1,5 +1,6 @@
 class SponsoredPostsController < ApplicationController
   def show
+    @sponsored_post = SponsoredPost.find(params[:id])
   end
 
   def new
@@ -43,4 +44,17 @@ class SponsoredPostsController < ApplicationController
       render :edit
     end
   end
+  
+  def destroy
+    @sponsored_post = SponsoredPost.find(params[:id])
+    
+    if @sponsored_post.destroy
+      flash[:notice] = "\"#{@sponsored_post.title}\" was deleted successfully."
+      redirect_to @sponsored_post.topic
+    else
+      flash.now[:alert] = "There was an error deleting the sponsored post."
+      render :show
+    end
+  end
+  
 end
