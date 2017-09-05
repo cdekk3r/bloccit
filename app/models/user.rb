@@ -11,12 +11,13 @@ class User < ActiveRecord::Base
              presence: true,
              uniqueness: { case_sensitive: false },
              length: { minimum: 3, maximum: 254 }
-
+   
    has_secure_password
    
    def format_name
       if name
           name_array = []
+          
           name.split.each do |name_part|
               name_array << name_part.capitalize
           end
@@ -24,4 +25,5 @@ class User < ActiveRecord::Base
           self.name = name_array.join(" ")
       end
    end
+   
 end
