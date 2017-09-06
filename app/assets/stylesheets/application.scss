@@ -2,11 +2,17 @@
 @import "bootstrap";
 
  .user-info {
-   margin-top: 9px;
+   margin-bottom: 5px;
  }
  
  .nav {
    margin-top: 5px;
  }
+ 
+ .username {
+   margin-top: 6px;
+   margin-left: 6px;
+ }
+
 
 @import "welcome.scss"
