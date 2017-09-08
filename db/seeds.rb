@@ -17,6 +17,16 @@ require 'random_data'
 end
 topics = Topic.all
 
+# Create Users
+5.times do
+    User.create!(
+        name:     RandomData.random_name,
+        email:    RandomData.random_email,
+        password: RandomData.random_sentence
+    )
+end
+users = User.all
+ 
 #Create Sponsored Posts
 50.times do
     SponsoredPost.create!(
@@ -31,6 +41,7 @@ sponsored_posts = SponsoredPost.all
 # Create Posts
 50.times do
     Post.create!(
+        user: users.sample,
         topic: topics.sample,
         title: RandomData.random_sentence,
         body:  RandomData.random_paragraph
@@ -55,8 +66,14 @@ end
     )
 end
 
+user = User.first
+user.update_attributes!(
+    email: "cdekk3r@hotmail.com",
+    password: "helloworld"
+    )
 
 puts "Seed finished"
+puts "#{User.count} users created"
 puts "#{Topic.count} topics created"
 puts "#{SponsoredPost.count} sponsored posts created"
 puts "#{Post.count} posts created"
