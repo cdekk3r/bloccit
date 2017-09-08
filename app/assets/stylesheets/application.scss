@@ -1,18 +1,20 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
- .user-info {
+.user-info {
    margin-bottom: 5px;
- }
- 
- .nav {
+}
+
+.nav {
    margin-top: 5px;
- }
- 
- .username {
+}
+
+.username {
    margin-top: 6px;
    margin-left: 6px;
- }
+}
 
 
+@import "topics.scss";
+@import "sessions.scss";
 @import "welcome.scss"
