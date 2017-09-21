@@ -46,14 +46,15 @@ sponsored_posts = SponsoredPost.all
         title: RandomData.random_sentence,
         body:  RandomData.random_paragraph
     )
+    
+    post.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
+    rand(1..5).times { post.votes.create!(value: [-1, 1].sample, user: users.sample) }
 end
 posts = Post.all
 
-post.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
-rand(1..5).times { post.votes.create!(value: [-1, 1].sample, user: users.sample) }
 
 # Create Comments
-300.times do
+100.times do
     Comment.create!(
         user: users.sample,
         post: posts.sample,
