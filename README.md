@@ -8,10 +8,10 @@ This app was created as part of the Bloc Full Stack Web Development course.
 
 Features
 
-Users can create a standard account in order to create and edit topics and posts.
-Users can up/down vote any post. A list of their posts is displayed on their profile with their vote score.
-Users can favorite posts, which are then saved on their user profile for easy tracking.
-Setup and Configuration
+- Users can create a standard account in order to create and edit topics and posts.
+- Users can up/down vote any post. A list of their posts is displayed on their profile with their vote score.
+- Users can favorite posts, which are then saved on their user profile for easy tracking.
+- Setup and Configuration
 
 Languages and Frameworks: Ruby on Rails and Bootstrap
 
@@ -30,8 +30,8 @@ The config/application.example.yml file illustrates how environment variables sh
 
 To run Bloccit locally:
 
-Clone the repository
-Run bundle install
-Create and migrate the SQLite database with rake db:create and rake db:migrate
-Start the server using rails server
-Run the app on localhost:3000
+- Clone the repository
+- Run bundle install
+- Create and migrate the SQLite database with rake db:create and rake db:migrate
+- Start the server using rails server
+- Run the app on localhost:3000
