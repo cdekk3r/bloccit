@@ -6,18 +6,18 @@ The source code is here on GitHub: https://github.com/cdekk3r/bloccit
 
 This app was created as part of the Bloc Full Stack Web Development course.
 
-Features
+<h3>Features</h3>
 
 - Users can create a standard account in order to create and edit topics and posts.
 - Users can up/down vote any post. A list of their posts is displayed on their profile with their vote score.
 - Users can favorite posts, which are then saved on their user profile for easy tracking.
 - Setup and Configuration
 
-Languages and Frameworks: Ruby on Rails and Bootstrap
+<h3>Languages and Frameworks:</h3> Ruby on Rails and Bootstrap
 
 Ruby version 2.3.4
 
-Development Tools and Gems include:
+<h3>Development Tools and Gems include:</h3>
 
 BCrypt for secure passwords
 SendGrid for email confirmation
