@@ -20,8 +20,6 @@ RSpec.describe Comment, type: :model do
   end
   
   describe "after_create" do
-    puts "---------"
-    p User.all
     before do
       @another_comment = Comment.new(body: 'Comment Body', post: post, user: user)
     end
@@ -29,8 +27,6 @@ RSpec.describe Comment, type: :model do
     it "sends an email to users who have favorited the post" do
 
       favorite = user.favorites.create(post: post)
-        puts "---------"
-    p User.all
       expect(FavoriteMailer).to receive(:new_comment).with(user, post, @another_comment).and_return(double(deliver_now: true))
     
       @another_comment.save!
