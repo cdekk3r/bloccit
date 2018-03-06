@@ -19,9 +19,10 @@ Ruby version 2.3.4
 
 <h3>Development Tools and Gems include:</h3>
 
-BCrypt for secure passwords
-SendGrid for email confirmation
-FactoryGirl for test suite success
+- BCrypt for secure passwords
+- SendGrid for email confirmation
+- FactoryGirl for test suite success
+
 Setup:
 
 Environment variables were set using Figaro and are stored in config/application.yml (ignored by git).
