@@ -15,13 +15,13 @@ This app was created as part of the Bloc Full Stack Web Development course.
 
 <h3>Languages and Frameworks:</h3> Ruby on Rails and Bootstrap
 
-Ruby version 2.3.4
+Ruby version 4.2.5
 
 <h3>Development Tools and Gems include:</h3>
 
 - BCrypt for secure passwords
 - SendGrid for email confirmation
-- FactoryGirl for test suite success
+- FactoryBot for test suite success
 
 Setup:
 
