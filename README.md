@@ -11,7 +11,15 @@ This app was created as part of the Bloc Full Stack Web Development course.
 - Users can create a standard account in order to create and edit topics and posts.
 - Users can up/down vote any post. A list of their posts is displayed on their profile with their vote score.
 - Users can favorite posts, which are then saved on their user profile for easy tracking.
-- Setup and Configuration
+
+<h3>Deployment</h3>
+
+To run Bloccit locally:
+
+- Clone the repository
+- Run bundle install
+- Create and migrate the SQLite database with `rake db:create` and rake `db:migrate`
+- Start the server using `rails s` or for cloud9 users `rails s -b $IP -p $PORT`
 
 <h3>Languages and Frameworks:</h3> Ruby on Rails and Bootstrap
 
@@ -21,18 +29,9 @@ Ruby version 4.2.5
 
 - BCrypt for secure passwords
 - SendGrid for email confirmation
-- FactoryBot for test suite success
+- Bootstrap
+- RSpec
 
-Setup:
+<h3>Explanation<h3>
 
-Environment variables were set using Figaro and are stored in config/application.yml (ignored by git).
-
-The config/application.example.yml file illustrates how environment variables should be stored.
-
-To run Bloccit locally:
-
-- Clone the repository
-- Run bundle install
-- Create and migrate the SQLite database with rake db:create and rake db:migrate
-- Start the server using rails server
-- Run the app on localhost:3000
+Bloccit is my first project built on Rails after completing the Bloc Ruby fundamentals. It is a simple forum-type application similar to the popular site Reddit.

@@ -13,6 +13,7 @@
       <% @topic.posts.each do |post| %>
         <%= render partial: 'posts/post', locals: { post: post } %>
       <% end %>
+      <h2>Sponsored Posts</h2>
       <% @topic.sponsored_posts.each do |post| %>
         <%= render partial: 'sponsored_posts/sponsored_post', locals: { post: post } %>
       <% end %>
@@ -21,7 +22,7 @@
     <div class="col-md-4">
       <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-success' %>
     </div>
-  <% end %>  
+  <% end %>
   <div class="col-md-4">
     <%= link_to "New SponsoredPost", new_topic_sponsored_post_path(@topic), class: 'btn btn-success' %>
   </div>
