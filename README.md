@@ -18,7 +18,7 @@ To run Bloccit locally:
 
 - Clone the repository
 - Run bundle install
-- Create and migrate the SQLite database with `rake db:create` and rake `db:migrate`
+- Create and migrate the SQLite database with `rake db:create` and 'rake db:migrate`
 - Start the server using `rails s` or for cloud9 users `rails s -b $IP -p $PORT`
 
 <h3>Languages and Frameworks:</h3> Ruby on Rails and Bootstrap
@@ -32,6 +32,26 @@ Ruby version 4.2.5
 - Bootstrap
 - RSpec
 
-<h3>Explanation<h3>
+<h3>Explanation</h3>
 
 Bloccit is my first project built on Rails after completing the Bloc Ruby fundamentals. It is a simple forum-type application similar to the popular site Reddit.
+
+<h3>Problem</h3> 
+
+One of the first problems I ran into was properly associating comments to a post. I had the correct `belongs_to` and `has_many` associations in the comment and post models respectively. To double check that it
+was working properly I went into the console to create a comment for a selected post.
+
+`post = Post.create(title: "post title", body: "post body")`
+`post.comments.create(body: "comment body")`
+
+In the output I noticed that the `post_id` column showed as nil indicating they were not properly associated.
+
+<h3>Solution</h3>
+
+After doing some research I learned this is done using a foreign key. A foreign key is an attribute from one model used in another model, which is exactly what I was missing. 
+When creating the comment model I needed to have a reference to the post. This is done simply by adding an adding additional attribute when the model is generated.
+
+`$ rails generate model Comment body:text post:references`
+
+The last bit `post:references` fixed the issue I was seeing in the console. Referring back to our associations each comment "belongs to" a post so each comment should have the identifier for which post it 
+belongs to.
