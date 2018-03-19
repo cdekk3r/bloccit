@@ -71,7 +71,7 @@ In a few controller actions I had multiple lines of variables being assigned to 
 
 The `update` action also had variables to assign the `title` and `body` params to a variable.
 
-<h3>Solution<h3>
+<h3>Solution</h3>
 
 To help get my code organized I used a mass assignment to assign all parameters at once. In order to do this the required post paramaters need to be whitelisted or you will get a "ForbiddenAttributeError".
 
