@@ -73,7 +73,7 @@ The `update` action also had variables to assign the `title` and `body` params t
 
 <h3>Solution</h3>
 
-To help get my code organized I used a mass assignment to assign all parameters at once. In order to do this the required post paramaters need to be whitelisted or you will get a "ForbiddenAttributeError".
+To help get my code organized I used a mass assignment to assign all parameters at once. In order to do this the required post parameters need to be whitelisted or you will get a "ForbiddenAttributeError".
 
 `@post = topic.posts.build(params.require(:post).permit(:title, :body))`
 
